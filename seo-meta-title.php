@@ -18,6 +18,14 @@ function seo_title_filter($title){
         $cat_title = single_cat_title('',false);
         $cat_seo_title = get_term_meta($cat_id,'seo_title',true);
         $title = $cat_seo_title ? $cat_seo_title : $cat_title;
+
+        $seo_cat_title_type = get_option('seo_cat_title_type');
+        if($seo_cat_title_type == 1) { // 父栏目
+            $_cat = is_object($cat) ? $cat : get_category($cat_id);
+            $_cat = get_category($_cat->parent);
+            $title .= $split.$_cat->name;
+        }
+
         $title .= $split.get_bloginfo('name');
     }
     // 标签页标题
@@ -33,6 +41,14 @@ function seo_title_filter($title){
     elseif(is_singular()){
         global $post;
         $title = trim($post->post_title) ? $post->post_title : $post->post_date;
+
+        $seo_post_title_type = get_option('seo_post_title_type');
+        if($seo_post_title_type == 1) { // 显示分类名称
+            $_cat = get_the_category($post->ID);
+            $_cat = $_cat[0];
+            $title .= $split.$_cat->name;
+        }
+
         $title .= $split.get_bloginfo('name');
     }
     elseif(is_feed()){

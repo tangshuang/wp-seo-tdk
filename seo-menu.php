@@ -3,7 +3,7 @@
 // 保存SEO设置的内容
 add_action('admin_init','seo_add_admin_options_submenu_save');
 function seo_add_admin_options_submenu_save(){
-    if(!empty($_POST) && $_POST['page'] == $_GET['page'] && $_POST['action'] == 'update_seo'){
+    if($_GET['page'] == 'seo' && $_POST['action'] == 'seo-update'){
         check_admin_referer();
         update_option('seo_split',$_POST['seo_split']);
         update_option('seo_site_title',$_POST['seo_site_title']);
@@ -11,7 +11,7 @@ function seo_add_admin_options_submenu_save(){
         update_option('seo_site_description',$_POST['seo_site_description']);
         update_option('seo_cat_title_type',$_POST['seo_cat_title_type']);
         update_option('seo_post_title_type',$_POST['seo_post_title_type']);
-        wp_redirect(admin_url('options-general.php?page='.$_POST['page'].'&saved=true&time='.time()));
+        wp_redirect(admin_url('options-general.php?page=seo&saved=true&time='.time()));
         exit;
     }
 }
@@ -56,8 +56,8 @@ function seo_add_admin_options_submenu_view(){
                     <div class="inside">
                         <p>标题格式：
                             <select name="seo_cat_title_type">
-                                <option value="1" <?php selected($seo_cat_title_type,1); ?>>分类名-博客名</option>
-                                <option value="2" <?php selected($seo_cat_title_type,2); ?>>分类名-父分类-博客名</option>
+                                <option value="0" <?php selected($seo_cat_title_type,0); ?>>分类名-博客名</option>
+                                <option value="1" <?php selected($seo_cat_title_type,1); ?>>分类名-父分类-博客名</option>
                             </select>
                         </p>
                     </div>
@@ -76,8 +76,8 @@ function seo_add_admin_options_submenu_view(){
                         <p>
                             标题格式：
                             <select name="seo_post_title_type">
-                                <option value="1" <?php selected($seo_post_title_type,1); ?>>文章名-博客名</option>
-                                <option value="2" <?php selected($seo_post_title_type,2); ?>>文章名-分类层级-博客名</option>
+                                <option value="0" <?php selected($seo_post_title_type,0); ?>>文章名-博客名</option>
+                                <option value="1" <?php selected($seo_post_title_type,1); ?>>文章名-分类层级-博客名</option>
                             </select>
                         </p>
                     </div>
@@ -99,7 +99,7 @@ function seo_add_admin_options_submenu_view(){
                     <button type="submit" class="button-primary">提交</button>
                 </p>
                 <input type="hidden" name="page" value="<?php echo $_GET['page']; ?>" />
-                <input type="hidden" name="action" value="update_seo" />
+                <input type="hidden" name="action" value="seo-update" />
                 <?php wp_nonce_field(); ?>
             </form>
         </div>
