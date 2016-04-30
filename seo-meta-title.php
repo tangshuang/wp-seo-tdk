@@ -8,10 +8,8 @@ function seo_title_filter($title){
 
     // 首页标题优化
     if((is_home() || is_front_page())){
-        if(get_option('seo_title'))
-            $title = get_option('seo_title');
-        else
-            $title = get_bloginfo('name').$split.get_bloginfo('description');
+        $title = get_option('seo_site_title');
+        if(!$title) $title = get_bloginfo('name').$split.get_bloginfo('description');
     }
     // 分类页标题
     elseif(is_category()){
