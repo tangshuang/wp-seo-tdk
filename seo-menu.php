@@ -3,7 +3,7 @@
 // 保存SEO设置的内容
 add_action('admin_init','seo_add_admin_options_submenu_save');
 function seo_add_admin_options_submenu_save(){
-    if($_GET['page'] == 'seo' && $_POST['action'] == 'seo-update'){
+    if(isset($_GET['page']) && $_GET['page'] == 'seo' && $_POST['action'] == 'seo-update'){
         check_admin_referer();
         update_option('seo_split',$_POST['seo_split']);
         update_option('seo_site_title',$_POST['seo_site_title']);
