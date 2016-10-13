@@ -99,7 +99,6 @@ function seo_add_admin_options_submenu_view(){
                         <p>关键词由后台填写的“SEO关键词”确定，如果不填写，则使用便签、分类的混合信息作为关键词。文章页的描述由后台填写的“SEO描述”确定，如果没有填写，使用填写的文章摘要作为描述，如果还没有填写，摘取文章的前150个字作为描述。</p>
                         <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表文章标题，<code>{title_or_time}</code>代表文章标题，如果标题为空则代表文章的发布时间，<code>{categories_split}</code>代表文章的分类列表（逗号分开，且后面跟上split），<code>{tags_split}</code>代表文章的标签列表（逗号分开，且后面跟上split），<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用post title，还可以使用<code>{meta_or_title_or_time}</code>就不解释了。<strong>仅支持标题和关键词</strong>。</p>
                         <p>此处如果不填写，默认使用“<code>{meta_or_title_or_time}{split}{blog_name}</code>”</p>
-                        <p>文章页有一个特殊的新规则，可以使用竖线<code>|</code>表示“或”，<code>||</code>表示“以xx结尾”，例如<code>{meta}|{title} post at {time}||{split}{blog_name}</code>。具体规则有点复杂，自己测试吧。</p>
                     </div>
                 </div>
                 <div class="postbox">

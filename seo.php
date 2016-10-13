@@ -9,15 +9,18 @@ Author: 否子戈
 Author URI: http://www.tangshuang.net
 */
 
-require 'seo-functions.php';
+define('WP_SEO_PULGIN',__FILE__);
+define('WP_SEO_DIR',dirname(WP_SEO_PULGIN));
+
+require_once(WP_SEO_DIR.'/seo-functions.php');
 
 // 菜单
-require 'seo-menu.php';
+require_once(WP_SEO_DIR.'/seo-menu.php');
 
 // 在后台添加分类、标签的SEO
-require 'seo-term-meta.php';
-require 'seo-post-meta.php';
+require_once(WP_SEO_DIR.'/seo-term-meta.php');
+require_once(WP_SEO_DIR.'/seo-post-meta.php');
 
 // 完成前台标题、关键词
-require 'seo-meta-title.php';
-require 'seo-meta-head.php';
+require_once(WP_SEO_DIR.'/seo-meta-title.php');
+require_once(WP_SEO_DIR.'/seo-meta-head.php');

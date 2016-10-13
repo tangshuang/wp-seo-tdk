@@ -33,6 +33,7 @@ function seo_title_filter($title){
 
     // 首页标题优化
     if((is_home() || is_front_page())){
+	    $seo_site_title = apply_filters('seo_site_title',$seo_site_title);
         if($seo_site_title) {
             $partten = array(
                 '{blog_name}',
@@ -57,6 +58,7 @@ function seo_title_filter($title){
         $cat_parents = seo_get_category_parents($cat);
         $cat_meta = seo_get_term_meta($cat,'seo_title');
 
+	    $seo_cat_title = apply_filters('seo_cat_title',$seo_cat_title);
         if($seo_cat_title) {
             $partten = array(
                 '{blog_name}',
@@ -87,6 +89,7 @@ function seo_title_filter($title){
         $tag_name = $wp_query->queried_object->name;
         $tag_meta = get_term_meta($tag_id,'seo_title',true);
 
+	    $seo_tag_title = apply_filters('seo_tag_title',$seo_tag_title);
         if($seo_tag_title) {
             $partten = array(
                 '{blog_name}',
@@ -119,6 +122,7 @@ function seo_title_filter($title){
         $post_cats = strip_tags(get_the_category_list( ',', 'multiple', $post_id ));
         $post_tags = strip_tags(get_the_tag_list('',',',''));
 
+	    $seo_post_title = apply_filters('seo_post_title',$seo_post_title);
         if($seo_post_title) {
             $partten = array(
                 '{blog_name}',
@@ -146,34 +150,7 @@ function seo_title_filter($title){
 	            $post_cats ? $post_cats.$seo_split : '',
                 $post_tags ? $post_cats.$seo_split : ''
             );
-	        if(strpos($seo_post_title,'|'))
-	        {
-	        	$tail = '';
-		        $pos = strpos($seo_post_title,'||');
-	        	if($pos)
-		        {
-		        	$tail = substr($seo_post_title,$pos + 2);
-			        $seo_post_title = substr($seo_post_title,0,$pos);
-		        }
-	        	$titles = explode('|',$seo_post_title);
-		        foreach ($titles as $tl)
-		        {
-		        	$title = str_replace($partten,$res,$tl);
-			        $title = trim($title);
-			        if($title)
-			        {
-				        break;
-			        }
-		        }
-		        if($tail)
-		        {
-			        $title .= str_replace($partten,$res,$tail);
-		        }
-	        }
-            else
-            {
-            	$title = str_replace($partten,$res,$seo_post_title);
-            }
+	        $title = str_replace($partten,$res,$seo_post_title);
         }
         else {
             $title = ($post_meta ? $post_meta : ($post_title ? $post_title : $post_time)).$seo_split.$blog_name;
@@ -185,6 +162,7 @@ function seo_title_filter($title){
         $post_title = trim($post->post_title);
         $post_meta = seo_get_post_meta($post_id,'_seo_title');
 
+	    $seo_page_title = apply_filters('seo_page_title',$seo_page_title);
         if($seo_page_title) {
             $partten = array(
                 '{blog_name}',
@@ -214,6 +192,7 @@ function seo_title_filter($title){
     $title = seo_clear_code($title);
     $title = strip_tags($title);
     $title = trim($title);
+	$title = apply_filters('seo_title',$title);
 
     return $title;
 }
