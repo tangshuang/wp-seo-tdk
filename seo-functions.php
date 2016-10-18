@@ -84,7 +84,7 @@ function _seo_get_category_parents( $term_id, $separator = ',', $visited = array
 		$chain .= _seo_get_category_parents( $term->parent, $separator, $visited );
 	}
 
-	$chain .= $name.$separator;
+	$chain .= $chain.$separator;
 
 	return $chain;
 }
