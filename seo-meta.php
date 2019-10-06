@@ -163,11 +163,20 @@ function seo_head_meta_description(){
     }
     elseif(is_category())
     {
-        $description = category_description();
+		global $cat;
+		$description = seo_get_term_meta($cat,'seo_description');
+		if (!$description || trim($description) == '') {
+			$description = category_description();
+		}
     }
     elseif(is_tag())
     {
-        $description = tag_description();
+		global $wp_query;
+		$tag_id = $wp_query->queried_object->term_id;
+		$description = seo_get_term_meta($tag_id,'seo_description');
+		if (!$description || trim($description) == '') {
+			$description = tag_description();
+		}
     }
     elseif(is_single())
     {

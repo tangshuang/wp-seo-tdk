@@ -75,7 +75,7 @@ function seo_add_admin_options_submenu_view(){
                     </div>
                     <div class="inside document">
                         <p>关键词由后台填写的“SEO关键词”确定，如果不填写，则没有关键词标签。描述由后台填写的描述确定。</p>
-                        <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表category name，<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用category name，<code>{parents_split}</code>代表父分类的category name（逗号分开，且后面跟上split）。<strong>仅支持标题和关键词</strong>。</p>
+                        <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表category name，<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用category name，<code>{parents_split}</code>代表父分类的category name（逗号分开，且后面跟上split）。</p>
                         <p>此处如果不填写，默认使用“<code>{meta_or_title}{split}{blog_name}</code>”。</p>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ function seo_add_admin_options_submenu_view(){
                     </div>
                     <div class="inside document">
                         <p>关键词由后台填写的“SEO关键词”确定，如果不填写，则没有关键词标签。描述由后台填写的描述确定。</p>
-                        <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表tag name，<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用tag name。<strong>仅支持标题和关键词</strong>。</p>
+                        <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表tag name，<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用tag name。</p>
                         <p>此处如果不填写，默认使用“<code>{meta_or_title}{split}{blog_name}</code>”</p>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ function seo_add_admin_options_submenu_view(){
                     </div>
                     <div class="inside document">
                         <p>关键词由后台填写的“SEO关键词”确定，如果不填写，则使用便签、分类的混合信息作为关键词。文章页的描述由后台填写的“SEO描述”确定，如果没有填写，使用填写的文章摘要作为描述，如果还没有填写，摘取文章的前150个字作为描述。</p>
-                        <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表文章标题，<code>{title_or_time}</code>代表文章标题，如果标题为空则代表文章的发布时间，<code>{categories_split}</code>代表文章的分类列表（逗号分开，且后面跟上split），<code>{tags_split}</code>代表文章的标签列表（逗号分开，且后面跟上split），<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用post title，还可以使用<code>{meta_or_title_or_time}</code>就不解释了。<strong>仅支持标题和关键词</strong>。</p>
+                        <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表文章标题，<code>{title_or_time}</code>代表文章标题，如果标题为空则代表文章的发布时间，<code>{categories_split}</code>代表文章的分类列表（逗号分开，且后面跟上split），<code>{tags_split}</code>代表文章的标签列表（逗号分开，且后面跟上split），<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用post title，还可以使用<code>{meta_or_title_or_time}</code>就不解释了。</p>
                         <p>此处如果不填写，默认使用“<code>{meta_or_title_or_time}{split}{blog_name}</code>”</p>
                     </div>
                 </div>
@@ -108,7 +108,7 @@ function seo_add_admin_options_submenu_view(){
                     </div>
                     <div class="inside document">
                         <p>关键词由后台填写的“SEO关键词”确定，如果不填写，则没有关键词标签。描述由后台填写的“SEO描述”确定，如果没有填写，使用填写的摘要作为描述，如果还没有填写，摘取前150个字作为描述。</p>
-                        <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表页面标题，<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用post title。<strong>仅支持标题和关键词</strong>。</p>
+                        <p>可以使用<code>{blog_name}</code>来代表blog name,<code>{blog_description}</code>代表blog description，<code>{split}</code>代表上面填写的间隔符，<code>{title}</code>来代表页面标题，<code>{meta_or_title}</code>代替后台填写的“SEO标题”，如没填写则用post title。</p>
                         <p>此处如果不填写，默认使用“<code>{meta_or_title}{split}{blog_name}</code>”</p>
                     </div>
                 </div>

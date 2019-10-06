@@ -1,8 +1,7 @@
 <?php
 
 // 准备好一个字符串处理函数
-function seo_clear_code($string){
-	$string = trim($string);
+function seo_clear_code($string) {
 	if(!$string)
 		return '';
 	$string = str_replace("\r\n",' ',$string);//清除换行符
@@ -63,8 +62,7 @@ function seo_get_meta($id,$key,$type = 'post') {
 	}
 }
 
-function seo_get_category_parents($term_id)
-{
+function seo_get_category_parents($term_id) {
 	$chain = _seo_get_category_parents($term_id);
 	if($chain)
 	{
@@ -72,8 +70,7 @@ function seo_get_category_parents($term_id)
 	}
 	return $chain;
 }
-function _seo_get_category_parents( $term_id, $separator = ',', $visited = array())
-{
+function _seo_get_category_parents( $term_id, $separator = ',', $visited = array()) {
 	$chain = '';
 	$term = get_term( $term_id, 'category' );
 	if ( is_wp_error( $term ) )
