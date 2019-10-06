@@ -1,6 +1,7 @@
-# wp-seo
+# wp-seo-tdk
 WordPress SEO Plugin，一个超简单的WordPress SEO插件
 
+[wordpress plugin dir](https://wordpress.org/plugins/wp-seo-tdk/)
 
 ## 安装
 上传插件到你的插件目录，进入wordpress后台，启动该插件。
