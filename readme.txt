@@ -1,8 +1,8 @@
 ﻿=== WP SEO TDK ===
 Contributors: 否子戈
 Donate link: www.tangshuang.net/2324.html
-Tags:wordpress seo, title seo, description seo, keywords seo
-Requires at least: 3.9.0
+Tags: wordpress seo, title seo, description seo, keywords seo
+Requires at least: 5.2.3
 Tested up to: 4.6.1
 Stable tag: trunk
 License: GPLv2 or later
