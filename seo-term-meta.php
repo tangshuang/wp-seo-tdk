@@ -66,14 +66,33 @@ function seo_extra_edit_term_fields($term) {
 function seo_extra_term_fileds_save($term_id){
     if(!empty($_POST)) foreach($_POST as $key => $value){
         if(strpos($key,'term_meta_') === 0) {
-			$meta_key = str_replace('term_meta_','',$key);
-			if (trim($value) == '') {
-				delete_term_meta($term_id, $meta_key);
-			}
-			else {
-            	$meta_value = esc_html(trim($value));
-            	update_term_meta($term_id, $meta_key, $meta_value) OR add_term_meta($term_id, $meta_key, $meta_value, true);
-			}
+            $meta_key = str_replace('term_meta_','',$key);
+            if (trim($value) == '') {
+                delete_term_meta($term_id, $meta_key);
+            }
+            else {
+                $meta_value = esc_html(trim($value));
+                update_term_meta($term_id, $meta_key, $meta_value) OR add_term_meta($term_id, $meta_key, $meta_value, true);
+            }
         }
     }
+}
+
+add_filter('manage_edit-post_tag_columns', '_register_tag_seo_title_columns');
+function _register_tag_seo_title_columns($columns) {
+    $columns['seo_title'] = 'SEO Title';
+    return $columns;
+}
+
+add_filter('manage_post_tag_custom_column', '_modify_tag_seo_title_column', 10, 3);
+function _modify_tag_seo_title_column($content, $column_name, $term_id){
+    $seo_title = get_term_meta($term_id, 'seo_title', true);
+    return $seo_title;
+}
+
+add_action('admin_head', '_set_tag_seo_title_column_width');
+function _set_tag_seo_title_column_width() {
+    echo '<style type="text/css">';
+    echo '.taxonomy-post_tag .column-posts { width: 60px; }';
+    echo '</style>';
 }
