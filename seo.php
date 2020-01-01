@@ -23,4 +23,4 @@ require_once(WP_SEO_DIR.'/seo-post-meta.php');
 
 // 完成前台标题、关键词
 require_once(WP_SEO_DIR.'/seo-title.php');
-require_once(WP_SEO_DIR.'/seo-head.php');
+require_once(WP_SEO_DIR.'/seo-meta.php');
