@@ -2,8 +2,8 @@
 Contributors: 否子戈
 Donate link: www.tangshuang.net/2324.html
 Tags: wordpress seo, title seo, description seo, keywords seo
-Requires at least: 5.2.3
-Tested up to: 4.6.1
+Requires at least: 3.9.0
+Tested up to: 5.2.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Screenshots ==
 
 == Changelog ==
+
+= 2.1.1 =
+同步最新代码。
 
 = 2.0.2 =
 修复了获取父分类串的bug
